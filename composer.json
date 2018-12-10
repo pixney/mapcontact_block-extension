@@ -1,0 +1,9 @@
+{
+    "name": "pixney/mapcontact_block-extension",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Pixney\\MapcontactBlockExtension\\": "src/"
+        }
+    }
+}
