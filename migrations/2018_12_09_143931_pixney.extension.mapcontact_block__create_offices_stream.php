@@ -18,9 +18,25 @@ class PixneyExtensionMapcontactBlockCreateOfficesStream extends Migration
     ];
     protected $fields = [
         'address' => [
-            'type'   => 'anomaly.field_type.textarea',
+            'type'   => 'anomaly.field_type.wysiwyg',
             'name'   => 'Address',
-            'locked' => false
+            'locked' => false,
+            'config' => [
+                'default_value' => null,
+
+                'buttons' => [
+                    // 'bold',
+                    // 'italic',
+                    // 'lists',
+                    // 'link',
+                    // 'underline',
+                ],
+                'configuration' => '',
+                'plugins'       => ['alignment', 'source'],
+                'line_breaks'   => false,
+                'sync'          => true,
+                'height'        => 300,
+            ]
         ],
         'phone' => [
             'type'   => 'anomaly.field_type.text',
