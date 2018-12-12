@@ -9,6 +9,7 @@ class MapcontactBlockExtension extends BlockExtension
 {
     protected $provides = 'anomaly.module.blocks::block.mapcontact';
     protected $model    = BlockModel::class;
+    protected $wrapper  = 'pixney.theme.esharawater::blocks/global/wrapper';
 
     public function getView()
     {
