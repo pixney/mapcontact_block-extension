@@ -10,6 +10,7 @@ class MapcontactBlockExtension extends BlockExtension
 {
     protected $provides = 'anomaly.module.blocks::block.mapcontact';
     protected $model    = BlockModel::class;
+    protected $category = 'content';
 
     public function getView()
     {

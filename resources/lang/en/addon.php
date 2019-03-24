@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Mapcontact Block',
+    'title'       => 'Map',
     'name'        => 'Mapcontact Block Extension',
-    'description' => ''
+    'description' => 'Map and contact details'
 ];
