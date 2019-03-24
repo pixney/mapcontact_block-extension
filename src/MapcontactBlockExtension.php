@@ -4,21 +4,18 @@ namespace Pixney\MapcontactBlockExtension;
 
 use Anomaly\BlocksModule\Block\BlockExtension;
 use Pixney\MapcontactBlockExtension\Block\BlockModel;
+use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 
 class MapcontactBlockExtension extends BlockExtension
 {
     protected $provides = 'anomaly.module.blocks::block.mapcontact';
     protected $model    = BlockModel::class;
-    protected $wrapper  = 'pixney.theme.esharawater::blocks/global/wrapper';
 
     public function getView()
     {
-        // TODO : Either get active theme or config..
-        return 'pixney.theme.esharawater::blocks/mapcontact';
-
-        // if ($this->block->configuration('something_special')) {
-        //     return 'my_company.extension.awesome_block::alternate_view';
-        // }
-        // return $this->view;
+        $settings      = app(SettingRepositoryInterface::class);
+        $setting       = $settings->get('streams::standard_theme');
+        $this->wrapper = $setting->value . '::blocks/global/wrapper';
+        return $setting->value . '::blocks/mapcontact';
     }
 }
